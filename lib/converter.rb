@@ -5,6 +5,8 @@ class Converter
     tens_place = digits[0].to_i
 
     case tens_place
+    when 1..3, 5
+      tens_place = 'X' * tens_place
     when 4
       tens_place = 'XL'
     end
@@ -17,7 +19,10 @@ class Converter
     else
       ones_place = ''
     end
-    
+
+    # tens_place
+    # ones_place
+
     numeral = tens_place + ones_place
     numeral
   end
