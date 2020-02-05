@@ -78,4 +78,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_2.convert(2)
     expect(result).to eq('II')
   end
+
+  it 'takes in 1 and returns I' do
+    convert_1 = Converter.new
+    result = convert_1.convert(1)
+    expect(result).to eq('I')
+  end
 end
