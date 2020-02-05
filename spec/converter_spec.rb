@@ -30,4 +30,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_10.convert(10)
     expect(result).to eq('X')
   end
+
+  it 'takes in 9 and returns IX' do
+    convert_9 = Converter.new
+    result = convert_9.convert(9)
+    expect(result).to eq('IX')
+  end
 end

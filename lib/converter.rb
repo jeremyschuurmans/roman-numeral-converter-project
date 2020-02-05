@@ -1,8 +1,14 @@
 class Converter
   def convert(num)
-    digits     = num.digits.reverse  # take the integer and split it into an array of digits
-    ones_place = digits[1].to_i      # set the digit in the ones place to variable and convert it back to integer
-    tens_place = digits[0].to_i
+    if num.digits.count > 1
+      digits = num.digits.reverse
+      ones_place = digits[1].to_i
+      tens_place = digits[0].to_i
+    else
+      digits = num
+      ones_place = digits
+      tens_place = ''
+    end
 
     case tens_place
     when 1..3, 5
