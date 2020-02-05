@@ -72,4 +72,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_3.convert(3)
     expect(result).to eq('III')
   end
+
+  it 'takes in 2 and returns II' do
+    convert_2 = Converter.new
+    result = convert_2.convert(2)
+    expect(result).to eq('II')
+  end
 end
