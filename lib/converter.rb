@@ -24,6 +24,8 @@ class Converter
       ones_place = 'V' + ('I' * (ones_place - 5))
     when 4
       ones_place = 'IV'
+    when 1..3
+      ones_place = 'I' * ones_place
     else
       ones_place = ''
     end
