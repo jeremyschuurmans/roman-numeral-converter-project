@@ -60,4 +60,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_5.convert(5)
     expect(result).to eq('V')
   end
+
+  it 'takes in 4 and returns IV' do
+    convert_4 = Converter.new
+    result = convert_4.convert(4)
+    expect(result).to eq('IV')
+  end
 end
