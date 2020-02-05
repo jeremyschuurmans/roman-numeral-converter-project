@@ -1,20 +1,22 @@
 class Converter
   def convert(num)
-    if num.digits.count > 1
-      digits = num.digits.reverse
-      ones_place = digits[1].to_i
+    if num.digits.count > 1              # if we're dealing with a number bigger than 9
+      digits     = num.digits.reverse    # separate into array of digits and reverse it. Reverse because the #digits method flips the order.
       tens_place = digits[0].to_i
-    else
-      digits = num
-      ones_place = digits
+      ones_place = digits[1].to_i
+    else                                 # if it's number between 1 and 9 assign it to the ones place and leave tens place blank.
+      digits     = num
       tens_place = ''
+      ones_place = digits
     end
 
+    # assign numbers in tens place and ones place to roman numerals
+
     case tens_place
-    when 1..3
-      tens_place = 'X' * tens_place
     when 4
       tens_place = 'XL'
+    when 1..3
+      tens_place = 'X' * tens_place
     end
 
     case ones_place
@@ -30,10 +32,7 @@ class Converter
       ones_place = ''
     end
 
-    # tens_place
-    # ones_place
-
-    numeral = tens_place + ones_place
+    numeral = tens_place + ones_place   # combine the strings and return
     numeral
   end
 end
