@@ -18,4 +18,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_30.convert(30)
     expect(result).to eq('XXX')
   end
+
+  it 'takes in 20 and returns XX' do
+    convert_20 = Converter.new
+    result = convert_20.convert(20)
+    expect(result).to eq('XX')
+  end
 end
