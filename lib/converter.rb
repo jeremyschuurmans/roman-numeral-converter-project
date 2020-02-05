@@ -11,7 +11,7 @@ class Converter
     end
 
     case tens_place
-    when 1..3, 5
+    when 1..3
       tens_place = 'X' * tens_place
     when 4
       tens_place = 'XL'
@@ -20,6 +20,8 @@ class Converter
     case ones_place
     when 9
       ones_place = 'IX'
+    when 5..8
+      ones_place = 'V' + ('I' * (ones_place - 5))
     when 4
       ones_place = 'IV'
     else
