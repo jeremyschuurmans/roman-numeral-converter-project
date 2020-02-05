@@ -14,8 +14,10 @@ class Converter
       ones_place = 'IX'
     when 4
       ones_place = 'IV'
+    else
+      ones_place = ''
     end
-
+    
     numeral = tens_place + ones_place
     numeral
   end
