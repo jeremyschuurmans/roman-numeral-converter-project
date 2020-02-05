@@ -42,4 +42,10 @@ RSpec.describe Converter, '#convert' do
     result = convert_8.convert(8)
     expect(result).to eq('VIII')
   end
+
+  it 'takes in 7 and returns VII' do
+    convert_7 = Converter.new
+    result = convert_7.convert(7)
+    expect(result).to eq('VII')
+  end
 end
