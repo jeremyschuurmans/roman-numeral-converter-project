@@ -15,8 +15,6 @@ class NumeralConverter
         end
         
         values.flatten!
-
-        values.sort {|a, b| a <=> b }
         
         duplicate_value = {}
 
