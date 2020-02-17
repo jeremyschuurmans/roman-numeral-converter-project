@@ -43,10 +43,14 @@ class NumeralConverter
             else
                 tens_place = values[0] + values[1]
             end
+
             ones_place = values[2]
         elsif numeral_array.size == 2
             tens_place = values[0]
             ones_place = values[1]
+        elsif numeral_array.size < 2
+            tens_place = values[0]
+            ones_place = 0
         end
 
         # values
