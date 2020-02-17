@@ -12,4 +12,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_XV.convert('XLV')
         expect(result).to eq(45)
     end
+
+    it 'takes in XL and returns 40' do
+        convert_XL = NumeralConverter.new
+        result = convert_XL.convert('XL')
+        expect(result).to eq(40)
+    end
 end

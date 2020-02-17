@@ -26,12 +26,12 @@ class NumeralConverter
             end
         end
         
-        values
+        values.sort! {|a, b| b <=> a }
 
-        if values.length == 2 && (values[0] == 50 || values[0] == 10)
+        if values.length == 2 && values[0] == 50
             result = values[0] - values[1]
-        elsif values.length == 3 && values[1] == 50
-            result = (values[1] - values[0]) + values[2]
+        elsif values.length == 3 && values[0] == 50
+            result = (values[0] - values[1]) + values[2]
             result
         end
     end
@@ -41,4 +41,6 @@ end
 # got: [50, 1]
 
 # expected: 45
-# got: [10, 50, 5]
+# got: [50, 10, 5]
+
+# 40: [50, 10]
