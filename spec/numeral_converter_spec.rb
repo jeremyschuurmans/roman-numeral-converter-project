@@ -30,4 +30,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_XXXVIII.convert('XXXVIII')
         expect(result).to eq(38)
     end
+
+    it 'takes in XXX and returns 30' do
+        convert_XXX = NumeralConverter.new
+        result = convert_XXX.convert('XXX')
+        expect(result).to eq(30)
+    end
 end
