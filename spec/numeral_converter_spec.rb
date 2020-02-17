@@ -72,4 +72,28 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_V.convert('V')
         expect(result).to eq(5)
     end
+
+    it 'takes in IV and returns 4' do
+        convert_IV = NumeralConverter.new
+        result = convert_IV.convert('IV')
+        expect(result).to eq(4)
+    end
+
+    it 'takes in III and returns 3' do
+        convert_III = NumeralConverter.new
+        result = convert_III.convert('III')
+        expect(result).to eq(3)
+    end
+
+    it 'takes in II and returns 2' do
+        convert_II = NumeralConverter.new
+        result = convert_II.convert('II')
+        expect(result).to eq(2)
+    end
+
+    it 'takes in I and returns 1' do
+        convert_I = NumeralConverter.new
+        result = convert_I.convert('I')
+        expect(result).to eq(1)
+    end
 end
