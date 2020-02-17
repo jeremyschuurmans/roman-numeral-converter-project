@@ -48,4 +48,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_IX.convert('IX')
         expect(result).to eq(9)
     end
+
+    it 'takes in VIII and returns 8' do
+        convert_VIII = NumeralConverter.new
+        result = convert_VIII.convert('VIII')
+        expect(result).to eq(8)
+    end
 end
