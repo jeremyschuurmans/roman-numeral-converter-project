@@ -24,14 +24,21 @@ class NumeralConverter
             else
                 duplicate_value[value] = 1
             end
-            
         end
+        
+        values
 
-        if values[0] > values[1]
+        if values.length == 2 && (values[0] == 50 || values[0] == 10)
             result = values[0] - values[1]
-        else
-            result = values[1] - values[0]
+        elsif values.length == 3 && values[1] == 50
+            result = (values[1] - values[0]) + values[2]
             result
         end
     end
 end
+
+# expected: 49
+# got: [50, 1]
+
+# expected: 45
+# got: [10, 50, 5]
