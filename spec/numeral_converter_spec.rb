@@ -54,4 +54,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_VIII.convert('VIII')
         expect(result).to eq(8)
     end
+
+    it 'takes in VII and returns 7' do
+        convert_VII = NumeralConverter.new
+        result = convert_VII.convert('VII')
+        expect(result).to eq(7)
+    end
 end
