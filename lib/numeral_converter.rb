@@ -22,6 +22,9 @@ class NumeralConverter
         if numeral_array.size > 4 && (numeral_array[-2] < numeral_array[-1])
             tens_place = values[0..-3].inject(:+)
             ones_place = values[-1] - values[-2]
+        elsif numeral_array.size > 4
+            tens_place = values[0..2].inject(:+)
+            ones_place = values[3..-1].inject(:+)
         elsif numeral_array.size == 4
             if values[1] > values[0]
                 tens_place = values[1] - values[0]

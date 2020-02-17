@@ -24,4 +24,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_XXXIX.convert('XXXIX')
         expect(result).to eq(39)
     end
+
+    it 'takes in XXXVIII and returns 38' do
+        convert_XXXVIII = NumeralConverter.new
+        result = convert_XXXVIII.convert('XXXVIII')
+        expect(result).to eq(38)
+    end
 end
