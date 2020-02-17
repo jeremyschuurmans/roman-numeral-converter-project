@@ -66,4 +66,10 @@ RSpec.describe NumeralConverter, '#convert' do
         result = convert_VI.convert('VI')
         expect(result).to eq(6)
     end
+
+    it 'takes in V and returns 5' do
+        convert_V = NumeralConverter.new
+        result = convert_V.convert('V')
+        expect(result).to eq(5)
+    end
 end
