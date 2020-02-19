@@ -8,6 +8,7 @@ RSpec.describe Converter, '#convert' do
         ["X", 10],
         ["VII", 7],
         ["V", 5],
+        ["II", 2],
         ["I", 1]
     ]
 
