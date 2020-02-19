@@ -1,6 +1,7 @@
 class Converter
     NUMERALS = {
         "L" => 50,
+        "X" => 10,
         "I" => 1
     }
 
