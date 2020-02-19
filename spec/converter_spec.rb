@@ -6,6 +6,7 @@ RSpec.describe Converter, '#convert' do
         ["XL", 40],
         ["XXXVI", 36],
         ["XXX", 30],
+        ["XIX", 19],
         ["X", 10],
         ["VII", 7],
         ["V", 5],
