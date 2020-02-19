@@ -12,8 +12,9 @@ class Converter
 
         while i < input.length  
             current_value = NUMERALS[input[i]]
+            next_value_exists = (i+1 < input.length)
 
-            if i+1 < input.length
+            if next_value_exists
                 next_value = NUMERALS[input[i+1]]
 
                 if current_value >= next_value  # if the value at the current index is greater than or equal to the adjacent value
