@@ -12,7 +12,8 @@ class Converter
         result = 0  # counter will keep track of the values through the iteration
         i = 0       # i will track the index
 
-        while i < input.length  
+        while i < input.length
+          
             current_value = NUMERALS[input[i]]
             next_value_exists = (i+1 < input.length)
 

@@ -23,4 +23,8 @@ RSpec.describe Converter, '#convert_roman_to_arabic' do
             expect(result).to eq(expected)
         end
     end
+
+    it 'returns an error message when passed invalid input' do
+        expect { Converter.new.convert_roman_to_arabic("P") }.to raise_error(TypeError)
+    end
 end
