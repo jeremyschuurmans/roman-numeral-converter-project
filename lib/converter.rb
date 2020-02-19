@@ -1,38 +1,34 @@
 class Converter
-  def convert(num)
-    if num.digits.count > 1              # if we're dealing with a number bigger than 9
-      digits     = num.digits.reverse    # separate into array of digits and reverse it. Reverse because the #digits method flips the order.
-      tens_place = digits[0].to_i
-      ones_place = digits[1].to_i
-    else                                 # if it's number between 1 and 9 assign it to the ones place and leave tens place blank.
-      digits     = num
-      tens_place = ''
-      ones_place = digits
+    NUMERALS = {
+        "L" => 50,
+        "X" => 10,
+        "V" => 5,
+        "I" => 1
+    }
+
+    def convert_roman_to_arabic(input)
+        result = 0  # counter will keep track of the values through the iteration
+        i = 0       # i will track the index
+
+        while i < input.length  
+            current_value = NUMERALS[input[i]]
+            next_value_exists = (i+1 < input.length)
+
+            if next_value_exists
+                next_value = NUMERALS[input[i+1]]
+
+                if current_value >= next_value  # if the value at the current index is greater than or equal to the adjacent value
+                    result += current_value     # increment the counter by that value
+                    i += 1                      # move the index forward one
+                else
+                    result += (next_value - current_value)    # otherwise subtract the current value from the adjacent value
+                    i += 2                                    # increment the counter by two because the next value has already been factored in
+                end
+            else
+                result += current_value
+                i += 1
+            end
+        end
+        result
     end
-
-    # assign numbers in tens place and ones place to roman numerals
-
-    case tens_place
-    when 4
-      tens_place = 'XL'
-    when 1..3
-      tens_place = 'X' * tens_place
-    end
-
-    case ones_place
-    when 9
-      ones_place = 'IX'
-    when 5..8
-      ones_place = 'V' + ('I' * (ones_place - 5))
-    when 4
-      ones_place = 'IV'
-    when 1..3
-      ones_place = 'I' * ones_place
-    else
-      ones_place = ''
-    end
-
-    numeral = tens_place + ones_place   # combine the strings and return
-    numeral
-  end
 end
