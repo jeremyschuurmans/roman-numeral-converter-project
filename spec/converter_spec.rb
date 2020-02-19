@@ -1,6 +1,6 @@
 require 'converter'
 
-RSpec.describe Converter, '#convert' do
+RSpec.describe Converter, '#convert_roman_to_arabic' do
     cases = [
         ["L", 50],
         ["XLIX", 49],
@@ -17,7 +17,7 @@ RSpec.describe Converter, '#convert' do
 
     cases.each do |numeral, value|
         it 'returns the proper value when passed a roman numeral string' do
-            expect(Converter.new.convert(numeral)).to eq(value)
+            expect(Converter.new.convert_roman_to_arabic(numeral)).to eq(value)
         end
     end
 end

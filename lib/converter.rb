@@ -6,7 +6,7 @@ class Converter
         "I" => 1
     }
 
-    def convert(input)
+    def convert_roman_to_arabic(input)
         result = 0  # counter will keep track of the values through the iteration
         i = 0       # i will track the index
 
