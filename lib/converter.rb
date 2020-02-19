@@ -1,6 +1,7 @@
 class Converter
     NUMERALS = {
-        "L" => 50
+        "L" => 50,
+        "I" => 1
     }
 
     def convert(input)

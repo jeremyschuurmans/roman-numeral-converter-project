@@ -2,7 +2,8 @@ require 'converter'
 
 RSpec.describe Converter, '#convert' do
     cases = [
-        ["L", 50]
+        ["L", 50],
+        ["I", 1]
     ]
 
     cases.each do |numeral, value|
