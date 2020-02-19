@@ -3,6 +3,7 @@ require 'converter'
 RSpec.describe Converter, '#convert' do
     cases = [
         ["L", 50],
+        ["XL", 40],
         ["XXXVI", 36],
         ["XXX", 30],
         ["X", 10],

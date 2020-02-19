@@ -11,10 +11,22 @@ class Converter
         i = 0
 
         while i < input.length
-            value = NUMERALS[input[i]]
+            current_value = NUMERALS[input[i]]
 
-            result += value
-            i += 1
+            if i+1 < input.length
+                next_value = NUMERALS[input[i+1]]
+
+                if current_value >= next_value
+                    result += current_value
+                    i += 1
+                else
+                    result += (next_value - current_value)
+                    i += 2
+                end
+            else
+                result += current_value
+                i += 1
+            end
         end
         result
     end
