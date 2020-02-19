@@ -10,7 +10,11 @@
 
 Run `./bin.convert` passing in the roman numeral you would like to convert as an argument, like so:
 
-    `./bin/convert <numeral>`
+```
+./bin/convert <numeral>
+```
+
+You can also add `bin` to your path with `export PATH=$(pwd)/bin:$PATH` to make the tool available anywhere on your OS.
 
 ## API Usage
 
