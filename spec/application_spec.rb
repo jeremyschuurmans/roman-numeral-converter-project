@@ -26,4 +26,10 @@ RSpec.describe Application, '#call' do
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include("30")
     end
+
+    it 'returns a 404 when requested a path that does not exist' do
+        get '/whoops'
+
+        expect(last_response.status).to eq(404)
+    end
 end
