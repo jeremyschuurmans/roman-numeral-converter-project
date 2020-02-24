@@ -19,4 +19,11 @@ RSpec.describe Application, '#call' do
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include("49")
     end
+
+    it 'returns 30 when passed XXX via GET request' do
+        get '/convert?roman=XXX'
+
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).to include("30")
+    end
 end
