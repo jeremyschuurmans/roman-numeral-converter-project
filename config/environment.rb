@@ -1,1 +1,1 @@
-require_relative './app/application'
+require_relative '../app/application'
