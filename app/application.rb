@@ -12,7 +12,9 @@ class Application
             result            = JSON.parse(converted_numeral)
 
             response.status   = 200
+            response.write "\n"
             response.write result["value"]
+            response.write "\n"
             response.finish
         else
             response.status   = 404
