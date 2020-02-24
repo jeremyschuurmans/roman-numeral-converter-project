@@ -1,4 +1,5 @@
 require 'converter'
+require 'spec_helper'
 
 RSpec.describe Converter, '#convert_roman_to_arabic' do
     cases = [
