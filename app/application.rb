@@ -28,5 +28,4 @@ class Application
             response.finish
         end
     end
-
 end
