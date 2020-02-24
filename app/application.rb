@@ -1,6 +1,12 @@
 require_relative '../lib/converter'
 
 class Application
+    attr_reader :converter
+
+    def initialize(converter = Converter.new)
+        @converter = converter
+    end
+
     def call(env)
         response = Rack::Response.new
         request  = Rack::Request.new(env)
@@ -8,7 +14,7 @@ class Application
         if request.path.match(/convert/)
             numeral = request.params["roman"]
 
-            converted_numeral = Converter.new.convert_roman_to_arabic(numeral)
+            converted_numeral = @converter.convert_roman_to_arabic(numeral)
             result            = JSON.parse(converted_numeral)
 
             response.status   = 200
