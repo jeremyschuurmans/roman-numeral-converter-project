@@ -1,3 +1,5 @@
+require 'json'
+
 class Converter
     NUMERALS = {
         "L" => 50,
@@ -28,7 +30,8 @@ class Converter
                 result += current_value
                 i += 1
             end
+            converted_value = { :value => result }
         end
-        result
+        JSON.generate(converted_value)
     end
 end

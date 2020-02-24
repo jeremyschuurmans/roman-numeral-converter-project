@@ -17,7 +17,10 @@ RSpec.describe Converter, '#convert_roman_to_arabic' do
 
     cases.each do |numeral, value|
         it 'returns the proper value when passed a roman numeral string' do
-            expect(Converter.new.convert_roman_to_arabic(numeral)).to eq(value)
+
+            result = JSON.parse(Converter.new.convert_roman_to_arabic(numeral))
+
+            expect(result["value"]).to eq(value)
         end
     end
 end
