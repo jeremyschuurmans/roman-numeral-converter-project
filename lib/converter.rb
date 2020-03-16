@@ -30,8 +30,7 @@ class Converter
                 result += current_value
                 i += 1
             end
-            converted_value = { :value => result }
         end
-        JSON.generate(converted_value)
+        result
     end
 end
