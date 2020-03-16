@@ -8,13 +8,10 @@ class Application
         if request.path.match(/convert/)
             numeral = request.params["roman"]
 
-            converted_numeral = Converter.new.convert_roman_to_arabic(numeral)
-            result            = JSON.parse(converted_numeral)
+            result = Converter.new.convert_roman_to_arabic(numeral)
 
             response.status   = 200
-            response.write "\n"
-            response.write result["value"]
-            response.write "\n"
+            response.write JSON.generate({ :value => result })
             response.finish
         else
             response.status   = 404
