@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/converter.rb'
+
+begin
+    puts  Converter.new.convert_roman_to_arabic(ARGV[0])
+rescue TypeError
+    puts "Invalid input, please try again"
+end
